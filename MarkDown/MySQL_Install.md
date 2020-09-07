@@ -1,5 +1,5 @@
 1. 下载安装的rpm包
-   + `sudo -Uvh mysql80-community-release-el7-3.noarch.rpm`
+   + `rpm -Uvh mysql80-community-release-el7-3.noarch.rpm`
 2. yum仓库默认选择最新版的mysql，低版本需要手动设置
    + 查看yum仓库中所有版本mysql状态
      + `yum repolist all | grep mysql`
@@ -14,3 +14,16 @@
      + `sudo yum module disable  mysql`
    + 安装MySQL服务
      + `sudo yum install mysql-community-server`
+   + 启动MySQL server
+     + systemctl start mysqld.service
+   + 查看MySQL server状态
+     + systemctl status mysqld.service
+3. msyql安装中会初始化server,在data文件夹生成ssl certificate和keys file,创建root用户
+   + root用户密码放在err.log日志中
+     + `grep 'temporary password' /var/log/mysqld.log`
+   + 更改密码
+     + `ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass4!'`
+   + 设置MySQL服务开启自启
+     + systemctl enable msyqld.service
+   + mysql默认安装位置
+     + `/var/lib/mysql`

@@ -1,0 +1,1 @@
+查看端口使用情况	`netstat -lnpt`
