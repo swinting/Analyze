@@ -27,3 +27,12 @@
      + systemctl enable msyqld.service
    + mysql默认安装位置
      + `/var/lib/mysql`
+4. 卸载MySQL
+   + 删除以下命令查出的有关mysql信息
+     + `rpm -qa | grep -i mysql`  `rpm -e --nodeps mysql`
+     + `yum list install mysql*`   `yum remove mysql`
+     + `whereis mysql` 
+     + `find / -name mysql`
+   + 删除MySQL开机自启服务和配置文件
+     + `my.cnf`
+     + `/root/.mysql_sercret`
