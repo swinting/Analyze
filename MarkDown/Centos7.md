@@ -56,4 +56,5 @@
 5. 配置环境变量
 
    + `export PATH=/usr/local/gcc-6.3.0/bin:$PATH`
+   + `source /etc/my.cnf`
 
