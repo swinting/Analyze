@@ -1,3 +1,7 @@
+###### Centos 配置
+
++ tar解压需要使用参数-C来指定解压目录
+
 1. 查看端口使用情况	`netstat -lnpt`
 
 2. 虚拟机连接时，ssh的服务端在连接时自动检测dns环境，导致链接过慢
@@ -53,8 +57,35 @@
 
    + `make install`
 
-5. 配置环境变量
 
-   + `export PATH=/usr/local/gcc-6.3.0/bin:$PATH`
-   + `source /etc/my.cnf`
+###### maven 配置
 
+1. 下载 bin 包
+
+2. 配置阿里源
+
+   + ```
+     <mirror>
+         <id>nexus-aliyun</id>
+         <mirrorOf>central</mirrorOf>
+         <name>Nexus aliyun</name>
+         <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+     </mirror>
+     ```
+
+3. 配置本地仓库地址
+
+   + ```
+     <localRepository>local path</localRepository>
+     ```
+
+###### cmake 安装
+
+1. 下载解压
+   + `wget https://cmake.org/files/v3.3/cmake-3.3.2.tar.gz `
+2. 安装gcc
+   + `yum install gcc-c++`
+3. 安装依赖
+   + `./bootstrap`
+   + `gmake`
+   + make install
